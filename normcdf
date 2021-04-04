@@ -1,0 +1,10 @@
+import math
+mean = float(input())
+std =  float(input())
+Value = float(input()) # Less than given value
+def normcdf(x):
+    CDF = 0.5 * (1 + math.erf((x - mean) / (std * (2 ** 0.5))))
+    return CDF
+
+# Less than given value
+print('{:.3f}'.format(normcdf(Value)))
