@@ -1,0 +1,31 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+
+N = int(input())
+X = list(map(int,input().split()))
+
+def Median(X):
+    
+    L = len(X)
+    if L%2==0:
+        Median = (X[L//2-1]+X[L//2])/2
+    else:
+        Median = X[L//2]
+    return Median
+
+if 5<=N<=50 and all(0<x<=100 for x in X): 
+    X.sort()
+    if N%2!=0:
+        Q1 = Median(X[0:N//2])
+        Q2 = Median(X)
+        Q3 = Median(X[N//2+1:])
+    else:
+        Q1 = Median(X[0:N//2])
+        Q2 = Median(X)
+        Q3 = Median(X[N//2:])
+    print(int(Q1))
+    print(int(Q2))
+    print(int(Q3))
+        
+else:
+    print('Enter number between the bounds specified')
+
